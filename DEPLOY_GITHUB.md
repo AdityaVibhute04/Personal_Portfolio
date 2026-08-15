@@ -1,23 +1,48 @@
-# Deploying v1.1 to GitHub Pages
+# Deploying Portfolio v1.2 to GitHub Pages
 
-## Recommended: GitHub Desktop
+The site contains nested image, report, resume, and source folders. Push the complete folder tree; uploading only HTML/CSS files will cause report/source links to return 404.
 
-The website contains nested report/source folders. Uploading only the visible HTML files will make the site load while every PDF/source link returns 404.
+## Git Bash workflow
 
-1. Clone `AdityaVibhute04/Personal_Portfolio` in GitHub Desktop.
-2. Delete the old site files from the local cloned folder.
-3. Copy **everything inside this v1.1 folder** into the cloned repository root. Keep `assets/images`, `assets/reports`, and `assets/source` intact.
-4. In GitHub Desktop, review the changes, commit them, and Push origin.
-5. Wait for GitHub Pages to redeploy, then hard-refresh the browser (`Ctrl+F5`).
+From inside your local `Personal_Portfolio` repository:
 
-## Important folders
+```bash
+git status
+git add -A
+git commit -m "Deploy portfolio v1.2"
+git push origin main
+```
 
-- `assets/images/` - website figures
-- `assets/reports/` - submitted PDFs
-- `assets/source/` - source archives such as the OpenDSS RAR
+Then wait for GitHub Pages to rebuild and hard-refresh the live site with `Ctrl + F5`.
 
-The thesis PDF is large, so GitHub Desktop / normal Git is preferred over browser upload.
+## Before committing
 
-## Local verification
+Confirm these folders exist:
 
-Open `index.html` locally for layout review. A link audit was also run before packaging to make sure every relative href/src target exists in the delivered folder.
+```text
+assets/
+├── images/
+├── reports/
+├── resume/
+└── source/
+```
+
+Check for accidental merge markers:
+
+```bash
+grep -RIn --exclude-dir=.git -E '^(<<<<<<<|=======|>>>>>>>)' .
+```
+
+It should return nothing.
+
+## GitHub Pages settings
+
+Repository → Settings → Pages → Deploy from branch:
+- Branch: `main`
+- Folder: `/ (root)`
+
+## Notes
+
+- `.gitattributes` keeps text-file line endings consistent across Windows/Git Bash and GitHub.
+- The site is static; no npm install or build command is required.
+- The thesis PDF is large, so normal Git/Git Bash is preferable to browser upload.

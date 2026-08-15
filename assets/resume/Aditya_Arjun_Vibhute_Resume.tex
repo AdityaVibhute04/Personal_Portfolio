@@ -1,0 +1,244 @@
+\documentclass[10pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage[a4paper,bottom=8mm,left=15mm,right=15mm,top=10mm]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage[table, svgnames]{xcolor}
+\usepackage{hyphenat}
+\usepackage{romannum}
+\usepackage{anyfontsize}
+\usepackage[pdftex]{hyperref}
+\usepackage{fontawesome}
+\usepackage[misc]{ifsym}
+
+\setlength{\parindent}{0pt}
+\hyphenpenalty 10000
+
+\makeatletter
+\newcommand{\thickhline}{%
+    \noalign {\ifnum 0=`}\fi \hrule height 0.7pt
+    \futurelet \reserved@a \@xhline
+}
+\newcolumntype{"}{@{\hskip\tabcolsep\vrule width 0.7pt\hskip\tabcolsep}}
+\makeatother
+
+\newcommand{\xfill}[2][1ex]{
+	\dimen0=#2\advance\dimen0 by #1
+	\leaders\hrule height \dimen0 depth -#1\hfill
+}
+\renewcommand{\section}[1]{
+	\vspace{4pt}
+	{\color{RoyalBlue}{\Large\scshape\raggedright #1\xfill[0pt]{0.5pt}}}
+}
+
+\renewcommand{\subsection}[5]{
+	\def\temp{#4}
+	\vspace{2pt}
+	{
+		\large
+		{\textbf{#1}} | {\sl #2} | {\sl #3} \filldate{#4}
+		\ifx\temp\empty
+		\else
+		{
+			\\[0.1em]
+			\fontsize{11}{13.2}\selectfont
+			\sl #5
+		}
+		\fi
+	}
+}
+
+\newcommand{\filldate}[1]{\strut\hfill {\small \textit{(#1)}}}
+
+\renewcommand\labelitemi{\small$\bullet$}
+\setlist[itemize]{itemsep=-0.4mm, topsep=2pt, leftmargin=15pt, after=\vspace{1pt}}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%% Header %%%%%%%%%%%%%%
+\begin{center}
+\begin{tabularx}{\textwidth}{c p{0.5\textwidth} p{0.35\textwidth}}
+\includegraphics[height=2.2cm]{iitb_logo.png}
+&
+\begin{minipage}[t]{\linewidth}
+\vspace{-15mm}
+\raggedright
+\textbf{\Large Aditya Vibhute}\\
+\vspace{1mm}
+\textbf{Energy Science and Engineering}\\
+\vspace{1mm}
+\textbf{Indian Institute of Technology Bombay}\\
+\vspace{1mm}
+\textbf{Contact: +91 8928288657}\\
+\vspace{1mm}
+\textbf{E-mail: adityavibhute04@gmail.com}
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}
+\vspace{-8mm}
+\raggedleft
+\textbf{Dual Degree (B.Tech. + M.Tech.)}\\
+\vspace{1mm}
+\href{https://www.linkedin.com/in/aditya-vibhute-167a562ba}{\textbf{LinkedIn}}
+\end{minipage}
+\end{tabularx}
+\end{center}
+
+%%%%%%%%%%%%%%%%% Education %%%%%%%%%%%%%%
+\vspace{-6mm}
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{l X c c}
+\hline
+\textbf{Examination} & \textbf{Institute} & \textbf{Year} & \textbf{CPI} \\
+\hline
+Graduation & IIT Bombay & 2026 & 8.01 \\
+\hline
+\end{tabularx}
+\end{center}
+
+%%%%%%%%% Master's Thesis (UNCHANGED per your instruction) %%%%%%%%%%%%%%%
+\section{Master's Thesis}
+
+\subsection{Sizing of BESS for Industrial Peak Shaving}{Master's Thesis}{DESE}{Aug '25 - Jun '26}{Guide: Prof. D. Venkatramanan}
+\begin{itemize}
+	\item Built a \textbf{linear-programming optimization model} in \textbf{Python} (HiGHS solver) for battery dispatch and demand-charge peak shaving across \textbf{10 real industrial load profiles}
+	\item Engineered a \textbf{data pipeline} (15-min for dispatch, 1-min for sizing) to process large time-series datasets
+	\item Ran a full \textbf{techno-economic analysis} (NPV, IRR, discounted payback) under real tariff structures, quantifying project viability across profiles and the sensitivity to demand-charge penalties
+	\item Modelled \textbf{LFP battery degradation} and integrated it into the lifetime and replacement-cost analysis
+\end{itemize}
+
+%%%%%%%%%%%%% Professional Experience (tightened) %%%%%%%%%%%%%%%%%%%%%%%%
+\section{Professional Experience}
+
+\subsection{BESS Techno-Commercial Analysis}{Research Intern}{IIT Bombay}{May '24 - Jul '24}{Guide: Prof. P. Sunthar}
+\begin{itemize}
+	\item Derived closed-form \textbf{savings expressions} for different BESS strategies and system configurations
+	\item Developed \textbf{LCoE models} for BESS, standalone or with PV, to cut grid and DG-set dependence
+	\item Built a \textbf{web framework} packaging these models into an application for industry use
+\end{itemize}
+
+%%%%%%%%%% Key Projects (reordered: techno-economic / optimization first) %%%%%%%%%%%%%%%
+\section{Key Projects}
+
+\subsection{Design of Photovoltaic Power Plants}{Course Project}{EE770}{Jan '25 - Apr '25}{Guide: Prof. Narendra Shiradkar, Department of Electrical Engineering}
+\begin{itemize}
+	\item Simulated fixed, single-axis, and dual-axis solar tracking systems across different locations using \textbf{NREL's SAM}
+	\item Conducted \textbf{LCOE-based techno-economic analysis} to determine the financial viability of tracking mechanisms
+	\item Established that \textbf{dual-axis} achieved \textbf{67\% higher energy yield} and \textbf{27.7\% lower LCOE} than fixed systems
+\end{itemize}
+
+\subsection{Simulation of Solar Mini-Grid System}{Course Project}{TD619}{Jan '25 - Apr '25}{Guide: Prof. Anand Rao, CTARA}
+\begin{itemize}
+	\item Designed \textbf{3.52kW PV-battery system} based on real-world load demand from past \textbf{3 yrs} for rural electrification 
+	\item Mapped energy consumption from appliances used in \textbf{15+} households for sizing a PV-battery system in \textbf{HOMER}
+	\item Performed optimization across multiple PV-battery configurations to identify cost savings of \textbf{10\%} in LCOE
+\end{itemize}
+
+\subsection{Grid-connected Rooftop Solar PV analysis}{Course Project}{TD619}{Jan '25 - Apr '25}{Guide: Prof. Anand Rao, CTARA}
+\begin{itemize}
+	\item Simulated a \textbf{2.5 kW} rooftop PV system in \textbf{HOMER} with a \textbf{4.83-year} discounted payback
+	\item Analyzed and evaluated the enablers and barriers to scaling grid-connected rooftop-PV adoption across India
+\end{itemize}
+
+\subsection{Modelling of sCO2 Power Cycle}{Course Project}{EN317}{Aug '23 - Nov '23}{Guide: Prof. Anish Modi, DESE}
+\begin{itemize}
+	\item \textbf{Modelled} a \textbf{150 MW} sCO2 Brayton cycle using \textbf{Python + CoolProp}, achieving \textbf{39.16\% thermal efficiency}
+	\item \textbf{Designed \& sized} microchannel LTR with \textbf{1.85 million channels}, and \textbf{21,360 sq.m} exchange area in Python
+\end{itemize}
+
+\subsection{Solar Thermal System for Industrial Process Heat}{Course Project}{EN630}{Jan '25 - Apr '25}{Guide: Prof. Anish Modi, DESE}
+\begin{itemize}
+	\item \textbf{Designed} a \textbf{129 sq.m} Parabolic Dish Solar Collector system achieving a thermal output of \textbf{57 kW} using Python
+	\item \textbf{Engineered} a solar thermal solution that operates with an efficiency of \textbf{76.19\%}, with temperatures up to \textbf{270°C}
+	\item \textbf{Calculated} an annual energy savings of \textbf{522.88 GJ}, abating \textbf{31,260 kg} of carbon dioxide emissions per year
+\end{itemize}
+
+\subsection{Inductor Design for boost PFC circuit}{Course Project}{EN665}{Aug '24 - Nov '24}{Guide: Prof. Ravi Prakash Reddy, DESE}
+\begin{itemize}
+	\item Designed and implemented a \textbf{DC-DC PFC boost converter} achieving \textbf{95.4\%} efficiency and \textbf{0.713} power factor
+	\item Fabricated a custom \textbf{881 µH inductor} using EE 42/21/20 core based on \textbf{area product} and \textbf{MMF calculations} 
+	\item Verified DCM mode operation with \textbf{< 3.5\%} voltage ripple, simulating 82V output converter operation in PLECS
+\end{itemize}
+
+\subsection{Design of Sun Tracking System}{Course Project}{EN408}{Jan '25 - Apr '25}{Guide: Prof. Rajesh Gupta, DESE}
+\begin{itemize}
+	\item Performed torque calculations accounting for \textbf{moment of inertia} and \textbf{wind loads} to ensure robust motor selection
+	\item Designed an \textbf{open-loop motor control system} using a high-torque Stepper Motor for precise solar tracking
+	\item Developed an analytical \textbf{astronomical tracking algorithm} to control motor actuation from sunrise to sunset
+\end{itemize}
+
+\subsection{Design of Synchronous Reluctance Machine}{Seminar}{EN406}{Aug '24 - Nov '24}{Guide: Prof. V.S.S. Pavan Kumar Hari, DESE}
+\begin{itemize}
+	\item Reviewed modern design methodologies for Synchronous Reluctance Machines and analysed multiple rotor and stator configurations for their torque, ripple, and power-factor trade-offs
+	\item Benchmarked the SynRM against an induction motor on efficiency, losses, torque, and cost
+\end{itemize}
+
+\subsection{Self-Powered Gas Pipeline Leak Detection System}{Course Project}{EN405}{Aug '24 - Nov '24}{Guide: Prof. Sandeep Kumar, DESE}
+\begin{itemize}
+	\item Engineered a \textbf{4.5W} wind energy harvesting setup using a \textbf{5cm HAWT}, delivering up to \textbf{28V at 20m/s flow} 
+	\item Integrated \textbf{pressure sensor} and \textbf{4G LTE module}, for autonomous leak detection and wireless data transmission
+	\item Achieved accurate leak alerts on \textbf{pressure drops < 1hPa} while performing open/closed pipe experiments
+\end{itemize}
+
+%%%%%%%%% Technical Skills (Aurora-tuned) %%%%%%%%%
+\section{Technical Skills}
+
+\vspace{3pt}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}m{2.6cm} " X}
+\textbf{Modelling \& Optimization} & Python (NumPy, Pandas, SciPy), Linear Programming \& optimization (HiGHS), techno-economic (NPV/IRR/LCoE) \& dispatch modelling, statistical \& numerical analysis \\ \thickhline
+\textbf{Tools} & MATLAB, HOMER Pro, NREL SAM, CoolProp, PLECS, OpenFOAM, Git, \LaTeX; C/C++ \\ \thickhline
+\end{tabularx}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Key courses %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Key Courses}
+
+\vspace{2pt}
+\begin{itemize}
+	\item \textbf{Maths courses:} Linear Algebra, Differential Equations, Calculus-I \& II, Numerical Analysis
+	\item \textbf{Electrical courses:} Electrical Machines, Power Electronics, Control \& Instrumentation, Electrical Energy Systems, Energy Systems Modelling \& Analysis, EV Powertrains, Power Converters for EV Charging, Electric Distribution Systems, Design \& Evaluation of Photovoltaic Power Plants, Power Electronic Converters for Renewable Energy, Application of Power Electronics to Power Systems, Power Generation \& System Planning, Modeling \& Control of Inverter-based Renewable Resources
+	\item \textbf{Energy courses:} Energy Policy \& Planning, Energy Resources Economics \& Environment, Energy Management, Thermodynamics \& Energy Conversion, Utilisation of Solar Thermal Energy, Wind Energy Conversion Systems, Conservation of Energy in Buildings
+	\item \textbf{Lab courses:} Basic Electrical Engineering Lab, Electrical Machines \& Power Electronics Lab, Thermal \& Fluid Engineering Lab, Solar Energy Lab, IC Engine \& Combustion Lab
+\end{itemize}
+
+%%%%%%%%%%% PoRs %%%%%%%%%%%%%%%%%%%%%%%
+\section{Positions of Responsibility}
+
+\subsection{Teaching Assistant}{Dept of Energy Science and Engineering}{EN327}{Aug '25 - Nov '25}{Prof Pavan Kumar Hari \& Prof D Venkatramanan}
+\begin{itemize}
+	\item Appointed as Teaching Assistant for \textbf{Power electronics and Instrumentation lab} for third year energy  students
+	\item Helping in the understanding of working of \textbf{linear potentiometer} and \textbf{linear voltage potential transducer}
+\end{itemize}
+
+\subsection{Teaching Assistant}{Dept of Energy Science and Engineering}{EN224}{Jan '26 - Apr '26}{Prof Pavan Kumar Hari \& Prof D Venkatramanan}
+\begin{itemize}
+	\item Appointed as Teaching Assistant for \textbf{Electrical Networks and Machines Lab} for second year energy  students
+	\item Mentoring \textbf{50+} students for their lab experiments and evaluate their work along with testing their understanding
+\end{itemize}
+
+%%%%%%%%% Scholastic Achievements %%%%%%%%%%%%%
+\section{Scholastic Achievements}
+
+\vspace{2pt}
+\begin{itemize}
+	\item Awarded the highest grade (\textbf{AA}) in both Dual Degree Project stages, Energy Innovation Lab, Seminar, and the Thermal \& Fluid Engineering Lab, with \textbf{10+} ABs
+	\item Achieved semester \textbf{SPIs up to 10.0}, with \textbf{AA} grades in both stages of the Dual Degree Project
+	\item Cleared the preliminary round of the \textbf{National Mathematics Olympiad} (AISMTA)
+\end{itemize}
+
+%%%%%%%%% Extracurrics (EN224 TA de-duplicated) %%%%%%%%%%%%%
+\section{Extracurricular Activities}
+ 
+\vspace{3pt}
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}m{2.3cm} " X}
+	\textbf{Tech} & Made \textbf{4+ single-player games} and \textbf{2+ web apps} for academic tasks; completed the AI project \textbf{ComicGPT} (Seasons of Code); boot-camps on IoT and house design \\ \thickhline
+	\textbf{Sports} & Awarded \textbf{Best Cadet} at an NCC training camp; competed in hostel-level 8-ball pool billiards \\ \thickhline
+	\textbf{Cultural} & Won \textbf{10+} awards for handwriting, essay, and story writing; cleared Grade 1 music theory (NSO Guitar); scriptwriter and performer for the school dramatics club \\ \thickhline
+	\textbf{Misc.} & Volunteered in a social-service initiative for special children ('Sunrise'); cleared \textbf{5+} IMO / NSO Olympiads \\ \thickhline
+\end{tabularx}
+
+\end{document}

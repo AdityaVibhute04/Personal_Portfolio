@@ -1,0 +1,20 @@
+Portfolio v1.2 — Task 4: Final Design Polish
+
+Changes:
+- Refined light/dark color tokens and secondary-text contrast.
+- Tightened typography, heading scale, line length, section rhythm and responsive spacing.
+- Reduced visual weight of the thesis feature while preserving its flagship status.
+- Refined project cards, coursework rows, detailed project pages, figures, metrics, buttons and footer.
+- Added early theme initialization to avoid light/dark flash on page load.
+- Theme defaults to system preference when the visitor has not selected one.
+- Added accessible keyboard focus styles and reduced-motion support.
+- Improved mobile navigation (aria-expanded, Escape close, close after navigation).
+- Added active project-section highlighting in the sticky table of contents.
+- Added aria-pressed state to project filter controls.
+- Made the Thesis navigation item active on the thesis page.
+- Preserved Task 1 cleaned visuals, Task 2 thesis redesign, and Task 3 professional/resume links.
+
+Design direction:
+Content-first academic/research website with restrained editorial styling, rather than a marketing landing page.
+- Added .gitattributes to normalize line endings for Git Bash/Windows deployments.
+- Updated README and deployment instructions for the final v1.2 package.

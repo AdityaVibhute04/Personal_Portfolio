@@ -1,0 +1,13 @@
+Portfolio v1.2 — Task 2: Featured Thesis Presentation
+
+Changes:
+- Rebuilt the homepage Featured Research section into an editorial two-column thesis feature.
+- Added three concise thesis metrics and direct thesis/PDF links.
+- Added an integrated workflow visual plus NPV and viability-frontier supporting visuals.
+- Replaced the oversized Projects-page thesis card with a compact dedicated flagship thesis block.
+- Added a three-panel visual opener to the thesis project page.
+- Preserved Task 1 cleaned technical figures.
+- Updated CSS cache version to v1.2.2.
+- Local link audit: PASS, 0 missing local targets.
+
+No Task 3 contact/CV changes or Task 4 typography/contrast pass have been applied yet.
