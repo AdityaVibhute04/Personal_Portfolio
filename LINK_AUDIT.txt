@@ -1,3 +1,0 @@
-LOCAL LINK AUDIT - v1.1
-
-PASS: all relative href/src targets referenced by root HTML files exist in the package.
