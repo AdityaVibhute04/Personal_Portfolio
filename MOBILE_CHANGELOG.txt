@@ -1,0 +1,14 @@
+Aditya Project Portfolio — v1.3 Mobile Responsiveness Update
+
+Desktop content and visual direction are unchanged. This update focuses on phone/tablet usability:
+- stronger responsive gutters and typography down to 320px-wide screens
+- larger 42–48px touch targets for navigation, links and buttons
+- full-width, scroll-safe mobile navigation with outside-click/Escape/resize closing
+- horizontal swipeable project filters instead of cramped wrapping
+- mobile-safe project metadata, coursework rows, specifications and contact links
+- sticky, horizontally scrollable project table of contents on phones
+- responsive thesis/project figures without fixed-height cropping pressure
+- scrollable equations and long technical content without page-wide overflow
+- improved wrapping for long email/technical text
+- single-column fallbacks below 420px for dense layouts
+- CSS/JS cache version bumped to 1.3.0

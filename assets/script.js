@@ -11,11 +11,20 @@ themeBtn?.addEventListener('click',()=>{const next=currentTheme()==='dark'?'ligh
 
 const menuBtn=document.querySelector('[data-menu-toggle]');
 const navLinks=document.querySelector('.nav-links');
-function setMenu(open){if(!menuBtn||!navLinks)return;navLinks.classList.toggle('open',open);menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'×':'☰'}
+function setMenu(open){
+  if(!menuBtn||!navLinks)return;
+  navLinks.classList.toggle('open',open);
+  document.body.classList.toggle('mobile-menu-open',open && window.matchMedia('(max-width:680px)').matches);
+  menuBtn.setAttribute('aria-expanded',String(open));
+  menuBtn.setAttribute('aria-label',open?'Close menu':'Open menu');
+  menuBtn.textContent=open?'×':'☰';
+}
 menuBtn?.setAttribute('aria-expanded','false');
 menuBtn?.addEventListener('click',()=>setMenu(!navLinks?.classList.contains('open')));
 navLinks?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+document.addEventListener('click',e=>{if(navLinks?.classList.contains('open')&&!navLinks.contains(e.target)&&!menuBtn?.contains(e.target))setMenu(false)});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
+window.addEventListener('resize',()=>{if(window.innerWidth>680)setMenu(false)});
 
 const current=document.body.dataset.page;
 document.querySelector(`[data-nav="${current}"]`)?.setAttribute('aria-current','page');
@@ -38,7 +47,11 @@ const tocLinks=[...document.querySelectorAll('.project-toc a[href^="#"]')];
 if(tocLinks.length){
   const sectionMap=new Map(tocLinks.map(a=>[a.getAttribute('href').slice(1),a]));
   const sections=[...sectionMap.keys()].map(id=>document.getElementById(id)).filter(Boolean);
-  const setActive=id=>tocLinks.forEach(a=>a.classList.toggle('active',a===sectionMap.get(id)));
+  const setActive=id=>{
+    tocLinks.forEach(a=>a.classList.toggle('active',a===sectionMap.get(id)));
+    const active=sectionMap.get(id);
+    if(active&&window.matchMedia('(max-width:920px)').matches)active.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'});
+  };
   const tocObserver=new IntersectionObserver(entries=>{const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top);if(visible[0])setActive(visible[0].target.id)},{rootMargin:'-18% 0px -68% 0px',threshold:0});
   sections.forEach(s=>tocObserver.observe(s));
   if(sections[0])setActive(sections[0].id);
