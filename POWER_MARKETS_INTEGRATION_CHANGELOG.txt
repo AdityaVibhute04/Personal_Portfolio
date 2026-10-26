@@ -1,0 +1,17 @@
+Power Markets portfolio integration
+
+Added:
+- project-012.html — Power Market Modelling: Energy, Congestion, Balancing & Reserves
+- assets/reports/Power_Markets_Assignment.pdf
+- assets/source/Power_Markets_PyPSA.ipynb
+- clean project visuals for workflow, nodal LMPs, ATC sensitivity and reserve clearing
+
+Updated:
+- projects.html — Energy markets filter + Project 012 card
+- index.html — Project 012 added to Selected Work; project count updated to 12
+- about.html — energy markets and PyPSA/HiGHS/SciPy added to areas/tools
+- README.md — project range updated through Project 012
+
+Content policy:
+- Results are presented as modelled assignment outcomes, not real-market forecasts.
+- The notebook's provisional wind-zone mapping is explicitly identified as a limitation.

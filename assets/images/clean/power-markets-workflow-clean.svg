@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+<title id="title">Power market modelling workflow</title><desc id="desc">Six-stage workflow from copper-plate energy clearing through storage, nodal and zonal congestion, balancing and reserve markets.</desc>
+<rect width="1200" height="620" fill="#ffffff"/>
+<text x="70" y="82" font-family="Arial,Helvetica,sans-serif" font-size="38" font-weight="700" fill="#151515">Power-market modelling workflow</text>
+<text x="70" y="120" font-family="Arial,Helvetica,sans-serif" font-size="19" fill="#666">IEEE RTS-96 · PyPSA / HiGHS · market clearing → network constraints → ancillary services</text>
+<line x1="105" y1="310" x2="1095" y2="310" stroke="#c8c8c8" stroke-width="4"/>
+<circle cx="110" cy="310" r="36" fill="#ffffff" stroke="#222" stroke-width="3"/>
+<text x="110" y="318" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#222">01</text>
+<text x="110" y="385" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#222">Copper plate</text>
+<text x="110" y="414" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#777">Uniform price</text><circle cx="305" cy="310" r="36" fill="#ffffff" stroke="#222" stroke-width="3"/>
+<text x="305" y="318" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#222">02</text>
+<text x="305" y="385" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#222">Storage</text>
+<text x="305" y="414" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#777">24-hour arbitrage</text><circle cx="500" cy="310" r="36" fill="#ffffff" stroke="#222" stroke-width="3"/>
+<text x="500" y="318" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#222">03</text>
+<text x="500" y="385" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#222">Nodal</text>
+<text x="500" y="414" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#777">LMP & congestion</text><circle cx="695" cy="310" r="36" fill="#ffffff" stroke="#222" stroke-width="3"/>
+<text x="695" y="318" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#222">04</text>
+<text x="695" y="385" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#222">Zonal</text>
+<text x="695" y="414" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#777">ATC & redispatch</text><circle cx="890" cy="310" r="36" fill="#ffffff" stroke="#222" stroke-width="3"/>
+<text x="890" y="318" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#222">05</text>
+<text x="890" y="385" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#222">Balancing</text>
+<text x="890" y="414" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#777">Imbalance settlement</text><circle cx="1085" cy="310" r="36" fill="#ffffff" stroke="#222" stroke-width="3"/>
+<text x="1085" y="318" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" fill="#222">06</text>
+<text x="1085" y="385" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="700" fill="#222">Reserves</text>
+<text x="1085" y="414" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#777">Sequential vs joint</text><g font-family="Arial,Helvetica,sans-serif"><rect x="72" y="485" width="1056" height="72" rx="2" fill="#f4f5f2" stroke="#d7d7d2"/><text x="105" y="515" font-size="15" fill="#555">Key modelling outputs</text><text x="105" y="542" font-size="18" font-weight="700" fill="#222">MCP · LMPs · line shadow values · redispatch · balancing prices · reserve prices · social welfare</text></g></svg>

@@ -7,7 +7,7 @@ Static academic/engineering portfolio for GitHub Pages. No npm, framework, datab
 - `projects.html` — curated major projects with search/filtering
 - `archive.html` — chronological coursework record
 - `course-en110.html`, `course-ee790.html` — course collections
-- `project-001.html` … `project-011.html` — detailed project pages
+- `project-001.html` … `project-012.html` — detailed project pages
 - `assets/images/` — website visuals and cleaned technical figures
 - `assets/reports/` — submitted project/thesis PDFs
 - `assets/source/` — source archives where available
